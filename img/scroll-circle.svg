@@ -1,0 +1,14 @@
+<svg width="99" height="100" viewBox="0 0 99 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M96.0449 66.759C92.0546 77.7224 84.2832 86.9023 74.1287 92.6474C63.9742 98.3926 52.103 100.326 40.6503 98.0997C29.1976 95.8735 18.9151 89.6339 11.6522 80.5032C4.38928 71.3725 0.622672 59.9499 1.02985 48.2899C1.43703 36.63 5.99127 25.4979 13.8734 16.8961C21.7556 8.29422 32.4483 2.78709 44.0284 1.36524C55.6085 -0.0566156 67.3159 2.70012 77.0449 9.1396C86.7739 15.5791 93.886 25.2787 97.1018 36.4938" stroke="url(#paint0_linear)" stroke-width="2" stroke-linecap="round"/>
+<defs>
+<linearGradient id="paint0_linear" x1="100" y1="50.0001" x2="8.04664e-07" y2="50.0001" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CB2687"/>
+<stop offset="1" stop-color="#00D1D9"/>
+
+	<animate attributeName="x1" dur="3s" values="100;75;50;25;0;25;50;100" repeatCount="indefinite" />
+	<animate attributeName="y1" dur="3s" values="50;75;100;75;50;25;0;25;50;" repeatCount="indefinite" />
+	<animate attributeName="x2" dur="3s" values="0;25;50;75;100;75;50;25;0" repeatCount="indefinite" />
+	<animate attributeName="y2" dur="3s" values="50;25;0;25;50;75;100;75;50" repeatCount="indefinite" />
+</linearGradient>
+</defs>
+</svg>

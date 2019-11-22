@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<style>
+		#cube-loader {
+			align-items: center;
+			display: flex;
+			height: 100%;
+			width: 100%;
+			position: fixed;
+			background-color: #fff;
+			z-index: 999;
+		}
+
+		#cube-loader .caption {
+			margin: 0 auto;
+		}
+
+		#cube-loader .cube-loader {
+			width: 73px;
+			height: 73px;
+			margin: 0 auto;
+			margin-top: 49px;
+			position: relative;
+			transform: rotateZ(45deg);
+		}
+
+		#cube-loader .cube-loader .cube {
+			position: relative;
+			transform: rotateZ(45deg);
+			width: 50%;
+			height: 50%;
+			float: left;
+			transform: scale(1.1);
+		}
+
+		#cube-loader .cube-loader .cube:before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #34495e;
+			animation: cube-loader 2.76s infinite linear both;
+			transform-origin: 100% 100%;
+		}
+
+		#cube-loader .cube-loader .loader-2 {
+			transform: scale(1.1) rotateZ(90deg);
+		}
+
+		#cube-loader .cube-loader .loader-3 {
+			transform: scale(1.1) rotateZ(180deg);
+		}
+
+		#cube-loader .cube-loader .loader-4 {
+			transform: scale(1.1) rotateZ(270deg);
+		}
+
+		#cube-loader .cube-loader .loader-2:before {
+			animation-delay: 0.35s;
+		}
+
+		#cube-loader .cube-loader .loader-3:before {
+			animation-delay: 0.69s;
+		}
+
+		#cube-loader .cube-loader .loader-4:before {
+			animation-delay: 1.04s;
+		}
+
+		.visible {
+			visibility: visible;
+			opacity: 1;
+			transition: opacity 2s linear;
+		}
+
+		.hidden {
+			visibility: hidden;
+			opacity: 0;
+			transition: visibility 0s 2s, opacity 2s linear;
+		}
+
+		@keyframes cube-loader {
+
+			0%,
+			10% {
+				transform: perspective(136px) rotateX(-180deg);
+				opacity: 0;
+			}
+
+			25%,
+			75% {
+				transform: perspective(136px) rotateX(0deg);
+				opacity: 1;
+			}
+
+			90%,
+			100% {
+				transform: perspective(136px) rotateY(180deg);
+				opacity: 0;
+			}
+		}
+	</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link
+		href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic"
+		rel="stylesheet">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="cube-loader">
+		<div class="caption">
+			<div class="cube-loader">
+				<div class="cube loader-1"></div>
+				<div class="cube loader-2"></div>
+				<div class="cube loader-4"></div>
+				<div class="cube loader-3"></div>
+			</div>
+		</div>
+	</div>
+	<header class="header">
+		<nav class="nav">
+			<a href="#" class="logo">
+				<img src="img/logo.png" alt="">
+				<span>WEB</span>inar
+			</a>
+			<div class="menu-wrapper">
+				<ul class="menu">
+					<li><a href="#">about</a></li>
+					<li><a href="#">portfolio</a></li>
+					<li><a href="#">offer</a></li>
+					<li><a href="#">team</a></li>
+					<li><a href="#">team</a></li>
+					<li><a href="#">contacts</a></li>
+				</ul>
+				<svg class="burger" width="30" height="16" viewBox="0 0 30 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M0.937476 2.37501H29.0624C29.58 2.37501 29.9999 1.95498 29.9999 1.43754C29.9999 0.920016 29.5799 0.500061 29.0624 0.500061H0.937476C0.419955 0.500061 0 0.920094 0 1.43754C0 1.95498 0.420033 2.37501 0.937476 2.37501Z"
+						fill="black" />
+					<path
+						d="M29.0624 7.06256H0.937476C0.419955 7.06256 0 7.48259 0 8.00004C0 8.51748 0.420033 8.93751 0.937476 8.93751H29.0624C29.58 8.93751 29.9999 8.51748 29.9999 8.00004C29.9999 7.48259 29.58 7.06256 29.0624 7.06256Z"
+						fill="black" />
+					<path
+						d="M29.0625 13.6251H10.3125C9.79495 13.6251 9.375 14.0451 9.375 14.5625C9.375 15.0801 9.79503 15.5 10.3125 15.5H29.0625C29.58 15.5 29.9999 15.08 29.9999 14.5625C30 14.045 29.58 13.6251 29.0625 13.6251Z"
+						fill="black" />
+				</svg>
+			</div>
+		</nav>
+	</header>
+	<main class="main">
+		<section class="section section-1">
+			<div class="bg-gr bg-gr--left">
+				<div class="svg-container svg-container-1">
+					<svg class="svg-content" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1147 798">
+
+						<path
+							d="M 22.1914 407.176 C -107.335 82.8324 367.324 -75.7584 486.324 35.2414  C 605.325 146.241  1084.82 -95.2583  1095.32 224.741  1105.83 544.741  1065.32 612.241  531.529 747.796  C -2.26562 883.351  151.717 731.52  22.1914 407.176 Z;"
+							fill="url(#paint_linear)">
+							<animate dur="35s" repeatCount="indefinite" attributeName="d"
+								values=" M60.1928 432.558 C -188.114 173.734 417.001 -132.118 524.326 60.6232 C 631.651 253.364 1077.65 45.3637 1133.33 250.123 C 1189 454.883 1094.5 734.383 682 751.883 C 269.5 769.383 308.5 691.383 60.1928 432.558Z;M 22.1914 407.176 C -107.335 82.8324 367.324 -75.7584 486.324 35.2414  C 605.325 146.241  1084.82 -95.2583  1095.32 224.741  1105.83 544.741  1065.32 612.241  531.529 747.796  C -2.26562 883.351  151.717 731.52  22.1914 407.176 Z; M 32.1906 374.078 C -111.619 187.755 270.147 -23.6156 496.324 2.1425 C 722.5 27.9006 1025.5 -48.5996 1105.32 191.642 C 1185.15 431.885 1044.47 658.604 572.5 650.401 C 100.528 642.197 176 560.401 32.1906 374.078Z; M60.1928 432.558 C -188.114 173.734 417.001 -132.118 524.326 60.6232 C 631.651 253.364 1077.65 45.3637 1133.33 250.123 C 1189 454.883 1094.5 734.383 682 751.883 C 269.5 769.383 308.5 691.383 60.1928 432.558Z; M 22.1914 407.176 C -107.335 82.8324 367.324 -75.7584 486.324 35.2414  C 605.325 146.241  1084.82 -95.2583  1095.32 224.741  1105.83 544.741  1065.32 612.241  531.529 747.796  C -2.26562 883.351  151.717 731.52  22.1914 407.176 Z; M60.1928 432.558 C -188.114 173.734 417.001 -132.118 524.326 60.6232 C 631.651 253.364 1077.65 45.3637 1133.33 250.123 C 1189 454.883 1094.5 734.383 682 751.883 C 269.5 769.383 308.5 691.383 60.1928 432.558Z;" />
+						</path>
+						<defs>
+							<linearGradient id="paint_linear" x1="916.727" y1="-31.0154" x2="129.523" y2="756.188"
+								gradientUnits="userSpaceOnUse">
+								<stop stop-color="#CB2687" />
+								<stop offset="1" stop-color="#00D1D9" />
+							</linearGradient>
+						</defs>
+					</svg>
+				</div>
+			</div>
+			<div class="content-wrapper">
+				<div class="content-bg bg-left">
+
+					<div class="dove dove--shadow1"></div>
+					<div class="dove dove--shadow2"></div>
+					<div class="dove dove--original"></div>
+				</div>
+				<div class="content content--right">
+					<div class="text-0">
+						<p class="p p64">Мы <span>ищем</span></p>
+						<p class="p p100"><span>Креативных</span></p>
+						<p class="p p100">Учеников</p>
+						<br>
+						<a class="btn btn-def btn-gr-m" href="#"><span><span>Для подробностей</span></span></a>
+					</div>
+				</div>
+			</div>
+			<div class="down">
+				<svg class="svg-circle" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path
+						d="M96.0449 66.759C92.0546 77.7224 84.2832 86.9023 74.1287 92.6474C63.9742 98.3926 52.103 100.326 40.6503 98.0997C29.1976 95.8735 18.9151 89.6339 11.6522 80.5032C4.38928 71.3725 0.622672 59.9499 1.02985 48.2899C1.43703 36.63 5.99127 25.4979 13.8734 16.8961C21.7556 8.29422 32.4483 2.78709 44.0284 1.36524C55.6085 -0.0566156 67.3159 2.70012 77.0449 9.1396C86.7739 15.5791 93.886 25.2787 97.1018 36.4938"
+						stroke="url(#paint1_linear)" stroke-width="2" stroke-linecap="round"></path>
+					<defs>
+						<linearGradient id="paint1_linear" x1="100" y1="50.0001" x2="8.04664e-07" y2="50.0001"
+							gradientUnits="userSpaceOnUse">
+							<stop stop-color="#CB2687" />
+							<stop offset="1" stop-color="#00D1D9" />
+
+							<animate attributeName="x1" dur="3s" values="100;75;50;25;0;25;50;100" repeatCount="indefinite" />
+							<animate attributeName="y1" dur="3s" values="50;75;100;75;50;25;0;25;50;" repeatCount="indefinite" />
+							<animate attributeName="x2" dur="3s" values="0;25;50;75;100;75;50;25;0" repeatCount="indefinite" />
+							<animate attributeName="y2" dur="3s" values="50;25;0;25;50;75;100;75;50" repeatCount="indefinite" />
+						</linearGradient>
+					</defs>
+				</svg>
+				<p class="down__text">Листай дальше...</p>
+			</div>
+		</section>
+		<section class="section section-2 animation">
+			<div class="bg-gr bg-gr--right">
+				<div class="svg-container svg-container-2">
+					<svg class="svg-content" viewBox="0 0 843 874" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							d="M37.8673 128.237C175.624 -145.673 411.92 95.3344 569.45 170.421C726.981 245.507 959.651 307.938 772.79 556.538C585.928 805.138 127.95 908.628 157.169 641.186C186.387 373.744 -99.8895 402.147 37.8673 128.237Z"
+							fill="url(#paint2_linear)">
+							<animate dur="30s" repeatCount="indefinite" attributeName="d"
+								values="M37.8673 128.237C175.624 -145.673 411.92 95.3344 569.45 170.421C726.981 245.507 959.651 307.938 772.79 556.538C585.928 805.138 127.95 908.628 157.169 641.186C186.387 373.744 -99.8895 402.147 37.8673 128.237Z; M35.8697 198.236C126.573 -144.675 443.667 31.6451 602.667 175.146C761.667 318.646 947.167 487.722 699.667 711.184C452.167 934.646 129.67 935.146 90.168 667.646C50.6666 400.146 -54.8331 541.146 35.8697 198.236Z; M37.9751 129.235C134.283 -76.6772 469.664 -8.85422 584.664 147.645C699.664 304.145 869.164 541.146 616.164 670.146C363.164 799.146 215.165 709.146 132.166 537.646C49.1666 366.146 -58.333 335.147 37.9751 129.235Z; M37.8673 128.237C175.624 -145.673 411.92 95.3344 569.45 170.421C726.981 245.507 959.651 307.938 772.79 556.538C585.928 805.138 127.95 908.628 157.169 641.186C186.387 373.744 -99.8895 402.147 37.8673 128.237Z;" />
+						</path>
+						<defs>
+							<linearGradient id="paint2_linear" x1="820.117" y1="436.941" x2="0.0586003" y2="436.941"
+								gradientUnits="userSpaceOnUse">
+								<stop stop-color="#CB2687" />
+								<stop offset="1" stop-color="#00D1D9" />
+							</linearGradient>
+						</defs>
+					</svg>
+
+				</div>
+			</div>
+			<div class="content-wrapper">
+				<div class="content content--left content--left2">
+					<div class="text-2">
+						<p class="p p64">Стань <span>ОДНИМ</span></p>
+						<p class="p p100">ИЗ НАС</p>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at diam sit tempus pulvinar. Porttitor arcu
+							leo leo at. Nulla nibh diam sapien adipiscing. Ut purus, nulla pellentesque venenatis. Mi malesuada tellus
+							fringilla enim, adipiscing.</p>
+						<br>
+						<p>Ullamcorper est libero in erat arcu. Varius ultrices et in sem vitae viverra in odio. Proin neque, etiam
+							suscipit sapien ullamcorper at. Consectetur proin sit parturient nullam nisl nisi ridiculus. Leo donec
+							blandit varius at fringilla libero, posuere et aliquam. Interdum tempus viverra neque ornare massa purus
+							est.</p>
+						<br>
+						<a class="btn btn-def" href="#"><span>Для подробностей</span></a>
+					</div>
+				</div>
+				<div class="content-bg bg-right">
+					<div class="man man--shadow1"></div>
+					<div class="man man--shadow2"></div>
+					<div class="man man--original"></div>
+				</div>
+			</div>
+		</section>
+		<section class="section section-3">
+			<div class="bg-gr bg-gr--duble">
+				<div class="svg-container svg-container-3">
+					<svg viewBox="0 0 2587 911" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g style="mix-blend-mode:multiply">
+							<path
+								d="M213.503 95.4847C622.112 -251.035 1406.23 482.486 1790.26 148.85C2174.29 -184.786 2947.66 322.822 2393.4 637.322C1839.14 951.823 1119.18 347.122 567.37 744.409C15.5585 1141.7 -195.107 442.005 213.503 95.4847Z"
+								fill="url(#paint3_linear)">
+								<animate dur="15s" repeatCount="indefinite" attributeName="d"
+									values="M213.503 95.4847C622.112 -251.035 1406.23 482.486 1790.26 148.85C2174.29 -184.786 2947.66 322.822 2393.4 637.322C1839.14 951.823 1119.18 347.122 567.37 744.409C15.5585 1141.7 -195.107 442.005 213.503 95.4847Z;M168.503 115.124C497.5 -262.36 1353 432.14 1745.26 168.49C2137.53 -95.161 2902.66 342.461 2348.4 656.962C1794.14 971.462 1110.81 394.853 559 792.14C7.18878 1189.43 -160.495 492.608 168.503 115.124Z;M176.503 87.1235C554.005 -204.253 1336.5 403 1712.5 102C2088.5 -198.999 2821 220.5 2365 657.5C1909 1094.5 1172.31 390.213 620.5 787.5C68.6888 1184.79 -201 378.5 176.503 87.1235Z;M213.503 95.4847C622.112 -251.035 1406.23 482.486 1790.26 148.85C2174.29 -184.786 2947.66 322.822 2393.4 637.322C1839.14 951.823 1119.18 347.122 567.37 744.409C15.5585 1141.7 -195.107 442.005 213.503 95.4847Z" />
+							</path>
+						</g>
+						<defs>
+							<linearGradient id="paint3_linear" x1="2587" y1="431.501" x2="2.08167e-05" y2="431.501"
+								gradientUnits="userSpaceOnUse">
+								<stop stop-color="#CB2687" />
+								<stop offset="1" stop-color="#00D1D9" />
+							</linearGradient>
+						</defs>
+					</svg>
+				</div>
+				<div class="svg-container svg-container-4">
+					<svg viewBox="0 0 2838 1066" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g style="mix-blend-mode:multiply">
+							<path
+								d="M234.217 117.945C682.471 -310.085 1542.67 595.979 1963.96 183.864C2385.25 -228.252 3089.38 372.763 2671.5 776.5C2253.62 1180.24 1227.77 428.774 622.418 919.514C17.068 1410.25 -214.036 545.976 234.217 117.945Z"
+								fill="url(#paint4_linear)">
+								<animate dur="15s" repeatCount="indefinite" attributeName="d"
+									values="M234.217 117.945C682.471 -310.085 1542.67 595.979 1963.96 183.864C2385.25 -228.252 3089.38 372.763 2671.5 776.5C2253.62 1180.24 1227.77 428.774 622.418 919.514C17.068 1410.25 -214.036 545.976 234.217 117.945Z;M260.217 79.9455C766.435 -228.608 1555 487 1989.96 145.864C2424.92 -195.272 3095.5 271.001 2697.5 738.5C2299.5 1206 1253.77 390.775 648.418 881.514C43.0681 1372.25 -246 388.499 260.217 79.9455Z;M292.217 44.2671C826.934 -113.464 1576.5 344.5 2009 72.999C2441.5 -198.502 3142 350.5 2692 751.5C2242 1152.5 1361.34 458.174 680.418 845.836C-0.5 1233.5 -242.5 201.998 292.217 44.2671Z;M234.217 117.945C682.471 -310.085 1542.67 595.979 1963.96 183.864C2385.25 -228.252 3089.38 372.763 2671.5 776.5C2253.62 1180.24 1227.77 428.774 622.418 919.514C17.068 1410.25 -214.036 545.976 234.217 117.945Z;" />
+							</path>
+						</g>
+						<defs>
+							<linearGradient id="paint4_linear" x1="2799.4" y1="533.001" x2="2.25258e-05" y2="533.001"
+								gradientUnits="userSpaceOnUse">
+								<stop stop-color="#CB2687" />
+								<stop offset="1" stop-color="#00D1D9" />
+							</linearGradient>
+						</defs>
+					</svg>
+				</div>
+			</div>
+			<div class="content-wrapper">
+				<div class="content content--left">
+					<div class="text-3">
+						<p class="p p64"><span>8 занятий <br></span>по <span>8 часов <br>1 раз </span>в неделю</p><br>
+						<p class="p p36"><span>Самые эффективные <br>БИЗНЕС-МЕХАНИКИ <br>из 30 потоков программы</span></p><br>
+						<p class="p p24">Ты быстро протестируешь разные инструменты, поймешь, какие дают лучший результат в твоем
+							деле и сфокусируешься на них в дальнейшем</p>
+						<br>
+					</div>
+				</div>
+				<div class="content content--blocks">
+					<div class="block">
+						<div class="block__grid">
+							<div class="block__item">
+								<p class="block__title">Цели, выбор ниши и новые
+									направления в бизнесе</p>
+								<div class="block__img block__img--target"></div>
+							</div>
+						</div>
+						<div class="block__grid">
+							<div class="block__item">
+								<p class="block__title">Продажи
+									<br>8 из 10</p>
+								<div class="block__img block__img--results"></div>
+							</div>
+						</div>
+						<div class="block__grid">
+							<div class="block__item">
+								<p class="block__title">ТОП-5 рычагов
+									<br>привлечения клиентов</p>
+								<div class="block__img block__img--idea"></div>
+							</div>
+						</div>
+						<div class="block__grid">
+							<div class="block__item">
+								<p class="block__title">Быстрые
+									<br>деньги</p>
+								<div class="block__img block__img--portfolio"></div>
+							</div>
+						</div>
+						<div class="block__grid">
+							<div class="block__item">
+								<p class="block__title">Выездные занятия
+									<br>с десятками</p>
+								<div class="block__img block__img--presentation"></div>
+							</div>
+						</div>
+						<div class="block__grid">
+							<div class="block__item">
+								<p class="block__title">Финансы
+									<br>и порядок</p>
+								<div class="block__img block__img--market-research"></div>
+							</div>
+						</div>
+						<div class="block__grid">
+							<div class="block__item">
+								<p class="block__title">Технология масштабного
+									<br>мышления</p>
+								<div class="block__img block__img--business"></div>
+							</div>
+						</div>
+						<div class="block__grid">
+							<div class="block__item">
+								<p class="block__title">Стратегия годового
+									<br>развития</p>
+								<div class="block__img block__img--pie-chart"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section section-4">
+			<div class="list">
+				<div class="list__item">
+					<div class="list__img list__img--box"></div>
+					<div class="list__text">
+						<p class="p p36"><span>Упаковка
+								<br>и быстрые лиды</span></p>
+						<br>
+						<p>Ты разберешься, как быстро привлекать лиды в свою нишу
+						</p><br>
+						<p>Изучишь и настроишь микроконверторы</p>
+					</div>
+				</div>
+				<div class="list__item list__item--right">
+					<div class="list__text">
+						<p class="p p36"><span>Поток
+								<br>клиентов</span></p>
+						<br>
+						<p>Ты настроишь системный трафик
+						</p><br>
+						<p>Изучишь новые каналы трафика</p><br>
+						<p>Поймешь, как оптимизировать расходы на трафик</p>
+					</div>
+					<div class="list__img list__img--mans"></div>
+				</div>
+				<div class="list__item">
+					<div class="list__img list__img--dollars"></div>
+					<div class="list__text">
+						<p class="p p36"><span>Продажи
+								<br>товаров и услуг</span></p>
+						<br>
+						<p>Научишься обрабатывать
+							и закрывать возражения
+						</p><br>
+						<p>Изучишь нюансы продаж
+							через разные сценарии:
+							от звонка до живой встречи</p><br>
+						<p>Выполнишь упражнения
+							по продажам в зале,
+							которое принесет тебе
+							деньги, и закрепишь навык
+							на практике</p>
+					</div>
+				</div>
+				<div class="list__item list__item--right">
+					<div class="list__text">
+						<p class="p p36"><span>Система
+								<br>задач</span></p>
+						<br>
+						<p>Научишься правильно делегировать задачи
+						</p><br>
+						<p>Разберешься, как работать с подрядчиками</p><br>
+						<p>Пропишешь вакансии для
+							найма сотрудников</p><br>
+						<p>Наймешь асситента</p>
+					</div>
+					<div class="list__img list__img--sett"></div>
+				</div>
+			</div>
+		</section>
+		<section class="section section-5">
+			<div class="bg">
+				<div class="bg__empty"> </div>
+				<svg class="bg-svg" viewBox="0 0 1826 1012" fill="none" xmlns="http://			www.w3.org/2000/svg">
+					<g filter="url(#filter0_d)">
+						<path
+							d="M1622.67 807.222C1334.33 1104.03 929.519 724.722 549.666 861.722C169.814 998.722 -73.48 561.781 174.167 286.722C421.814 11.6635 700.501 263.412 1195.17 113.222C1689.83 -36.9679 1911 510.412 1622.67 807.222Z"
+							fill="white" />
+					</g>
+					<defs>
+						<filter id="filter0_d" x="23.8328" y="62.634" width="1777.17" height="936.366" filterUnits="userSpaceOnUse"
+							color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix" />
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" />
+							<feOffset dy="25" />
+							<feGaussianBlur stdDeviation="25" />
+							<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0" />
+							<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow" />
+							<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape" />
+						</filter>
+					</defs>
+				</svg>
+				<div class="circle-wrapper">
+					<svg class="circle-half-svg" viewBox="0 0 79 667" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path id="check" stroke-dasharray="676" stroke-dashoffset=""
+							d="M56.8069 3.90234C-20.9518 218.171 -14.2209 454.006 75.6321 663.491" stroke="#7072AB" stroke-width="6"
+							stroke-linecap="round">
+							<animate dur="4s" attributeName="stroke-dashoffset" values="-676; 0" />
+						</path>
+					</svg>
+					<div class="circle">
+						<div class="circle__text circle__text--seo">
+							<p class="p p36 circle__cap">SEO</p>
+							<p class="circle__subtet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat nisl eu
+								pharetra, sodales. Vivamus libero, porttitor ipsum, gravida egestas consectetur faucibus non.</p>
+						</div>
+						<div class="circle__text circle__text--wd collaps">
+							<p class="p p36 circle__cap">Web design</p>
+							<p class="circle__subtet active">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat nisl
+								eu
+								pharetra, sodales. Vivamus libero, porttitor ipsum, gravida egestas consectetur faucibus non.</p>
+						</div>
+						<div class="circle__text circle__text--markering">
+							<p class="p p36 circle__cap circle__cap--bottom">Marketing</p>
+							<p class="circle__subtet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat nisl eu
+								pharetra, sodales. Vivamus libero, porttitor ipsum, gravida egestas consectetur faucibus non.</p>
+						</div>
+						<div class="circle__text circle__text--mobile">
+							<p class="p p36 circle__cap circle__cap--bottom">Mobile</p>
+							<p class="circle__subtet">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat nisl eu
+								pharetra, sodales. Vivamus libero, porttitor ipsum, gravida egestas consectetur faucibus non.</p>
+						</div>
+					</div>
+				</div>
+				<div class="bg__inner">
+					<div class="bg__circle">
+						<div class="bg__img"></div>
+						<svg class="circle1" width="156" height="582" viewBox="0 0 156 582" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path id="check" stroke-dasharray="660" stroke-dashoffset="0"
+								d="M152.997 3.41153C108.59 36.252 72.0987 78.6174 46.2001 127.4C20.3015 176.182 5.65256 230.143 3.32789 285.325C1.00322 340.507 11.0618 395.509 32.7658 446.297C54.4698 497.084 87.2685 542.369 128.756 578.828"
+								stroke="url(#paint5_linear)" stroke-width="6" stroke-linecap="round">
+								<animate dur="4s" attributeName="stroke-dashoffset" values="660; 0" />
+							</path>
+							<defs>
+								<linearGradient id="paint5_linear" x1="740" y1="300.899" x2="6.00001" y2="300.899"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="#CB2687" />
+									<stop offset="1" stop-color="#00D1D9" />
+								</linearGradient>
+							</defs>
+						</svg>
+						<svg class="circle2" width="630" height="631" viewBox="0 0 630 631" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<circle cx="315" cy="315.898" r="312" stroke="url(#paint6_linear)" stroke-width="6" stroke-linecap="round"
+								stroke-dasharray="50 40" />
+							<defs>
+								<linearGradient id="paint6_linear" x1="624" y1="315.899" x2="6" y2="315.899"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="#CB2687" />
+									<stop offset="1" stop-color="#00D1D9" />
+								</linearGradient>
+							</defs>
+						</svg>
+						<svg class="circle3" width="574" height="575" viewBox="0 0 574 575" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<circle cx="287" cy="287.898" r="285" transform="rotate(-180 287 287.898)" stroke="url(#paint7_linear)"
+								stroke-width="4" stroke-miterlimit="1.19948" stroke-linecap="round" stroke-dasharray="25 30" />
+							<defs>
+								<linearGradient id="paint7_linear" x1="574" y1="287.898" x2="-8.6934e-05" y2="287.898"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="#CB2687" />
+									<stop offset="1" stop-color="#00D1D9" />
+								</linearGradient>
+							</defs>
+						</svg>
+						<svg class="circle4" width="516" height="517" viewBox="0 0 516 517" fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<circle cx="258" cy="258.898" r="257" stroke="url(#paint8_linear)" stroke-width="2"
+								stroke-miterlimit="1.19948" stroke-linecap="round" stroke-dasharray="5 20" />
+							<defs>
+								<linearGradient id="paint8_linear" x1="516" y1="258.899" x2="4.15206e-06" y2="258.899"
+									gradientUnits="userSpaceOnUse">
+									<stop stop-color="#CB2687" />
+									<stop offset="1" stop-color="#00D1D9" />
+								</linearGradient>
+							</defs>
+						</svg>
+
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section section-6">
+			<div class="content-wrapper">
+				<form class="form" action="">
+					<p class="p p64">Как нас <span>найти</span></p><br>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at diam sit tempus pulvinar. Porttitor arcu
+						leo leo at. </p><br>
+					<label class="label">Name <br>
+						<input type="text" class="input" placeholder="Type your name">
+					</label>
+					<label class="label">E-mail <br>
+						<input type="text" class="input" placeholder="Type your mail adress">
+					</label>
+					<label class="label">Phone <br>
+						<input type="text" class="input" placeholder="Type your phone number">
+					</label>
+					<label class="label">Message <br>
+						<textarea rows="7" cols="7" maxlength="50" class="textarea"
+							placeholder="Write something if you want"></textarea>
+					</label>
+					<label class="label label--send">
+						<a class="btn btn-def btn-gr" href="#">
+							<p><span>Send message</span></p>
+						</a>
+					</label>
+
+				</form>
+				<div class="map">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2923.921096950857!2d74.5773261148513!3d42.874509510450956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x389ec83d6e87b83d%3A0x7e54d3ff91301bc7!2zODAg0YPQuy4g0JouINCi0LjQvNC40YDRj9C30LXQstCwLCDQkdC40YjQutC10Lo!5e0!3m2!1sru!2skg!4v1570186366267!5m2!1sru!2skg"
+						style="border:0;" allowfullscreen=""></iframe>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer class="footer">
+		<div class="footer__content">
+			<a href="#" class="logo logo--footer">
+				<img src="img/logo.png" alt="">
+				<span>WEB</span>inar
+			</a>
+			<ul class="footer__list">
+				<li><a href="">Lorem ipsum</a></li>
+				<li><a href="">Consectetur adipiscing </a></li>
+				<li><a href="">Sed at diam</a></li>
+				<li><a href="">Sed at diam</a></li>
+			</ul>
+			<ul class="footer__list">
+				<li><a href="">Lorem ipsum</a></li>
+				<li><a href="">Consectetur adipiscing </a></li>
+				<li><a href="">Sed at diam</a></li>
+				<li><a href="">Sed at diam</a></li>
+			</ul>
+			<ul class="footer__list">
+				<li><a href="">Lorem ipsum</a></li>
+				<li><a href="">Consectetur adipiscing </a></li>
+				<li><a href="">Sed at diam</a></li>
+				<li><a href="">Sed at diam</a></li>
+			</ul>
+		</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/common.js"></script>
+</body>
+
+</html>
