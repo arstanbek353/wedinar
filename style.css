@@ -425,6 +425,7 @@ body {
 	animation-duration: 8s;
 	animation-name: man--shadow1;
 	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
 }
 
 .man--shadow2 {
@@ -441,6 +442,7 @@ body {
 	animation-duration: 8s;
 	animation-name: man--shadow2;
 	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
 }
 
 .man--original {
@@ -452,6 +454,7 @@ body {
 	animation-duration: 8s;
 	animation-name: man--original;
 	animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
 }
 
 .section-3 {

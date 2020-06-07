@@ -15,20 +15,20 @@ $('.circle').children(".circle__text").on('click', function(){
 	$(".circle__text").not(this).removeClass('collaps').find('.circle__subtet').slideUp("slow");
 });
 
-var $window = $(window);
-var $elem = $(".animation");
-
-function isScrolledIntoView($elem, $window) {
-    var docViewTop = $window.scrollTop();
-    var docViewBottom = docViewTop + $window.height();
-
-    var elemTop = $elem.offset().top;
-    var elemBottom = elemTop + $elem.height();
-
-    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+var elem = document.querySelectorAll(".animation");
+function moveScroll() {
+  for (var i = 0; i<elem.length; i++) {
+    var elemTop = elem[i].getBoundingClientRect().top,
+      elemHeight = elem[i].getBoundingClientRect().height,
+      startPoint = elemHeight*50/100,
+      endPoint = elemHeight*85/100;
+    if ( elemTop < startPoint && elemTop > -(endPoint)) {
+      elem[i].classList.add('animate')
+    } else {
+      elem[i].classList.remove('animate')
+    }
+  }
 }
 $(document).on("scroll", function () {
-    if (isScrolledIntoView($elem, $window)) {
-        $elem.addClass("animate")
-    }
+  moveScroll();
 });
